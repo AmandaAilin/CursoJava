@@ -1,0 +1,71 @@
+Para entrada de dados em java devemos criar um objeto do tipo "Scanner"
+         
+		 * Scanner sc = new Scanner(System.in); 
+		 * para que el scanner funcione temos que importar "import java.util.Scanner;" e fazer o "sc.close();" quando não precisar mais do objeto sc.
+		 * 
+    Para texto sem espaços: 
+		 * Scanner sc = new Scanner(System.in); 
+		 * String x;
+		 * x = sc.next();
+		 * System.out.println("Voce digitou:" + x); 
+		 * sc.close();
+		 * 
+    Ler um numero inteiro:
+		 * Scanner sc = new Scanner(System.in); 
+		 * int x;
+		 * x = sc.nextInt();
+		 * System.out.println("Voce digitou:" + x);
+		 * sc.close();
+		 * 
+    Ler numero com ponto flutuante: Double pega a localidade do sistema então temos que  declarar "Locale.setDefault(Locale.US);"
+		 * Locale.setDefault(Locale.US); 
+		 * Scanner sc = new Scanner(System.in); 
+		 * double x;
+		 * x = sc.nextDouble();
+		 * System.out.printf("Voce digitou:%.2f%n", x);
+		 * System.out.println("Voce digitou:" + x);
+		 * sc.close();
+		 * 
+	Ler caractere:
+		 * Scanner sc = new Scanner(System.in); 
+		 * char x;
+		 * x = sc.next().charAt(0); \\ vai pegar o primeiro caractere
+		 * sc.close();
+		 * 
+    Ler varios dados na mesma linha: 
+		 * Locale.setDefault(Locale.US); 
+		 * Scanner sc = new Scanner(System.in); 
+		 * String x;
+		 * int y;
+		 * double z;
+		 * 
+		 * x = sc.next();
+		 * y = sc.nextInt();
+		 * z = sc.nextDouble(); 
+		 * System.out.println("Dados digitados:");
+		 * System.out.println(x);
+		 * System.out.println(y);
+		 * System.out.println(z);
+		 * sc.close();
+		 * 
+    Ler um texto até a quebra de linha:
+		 * 
+		 * Scanner sc = new Scanner(System.in);
+		 * String s1, s2, s3;
+		 * 
+		 * s1 = sc.nextLine();
+		 * s2 = sc.nextLine();
+		 * s3 = sc.nextLine();
+		 * 
+		 * System.out.println("DADOS DIGITADOS:");
+		 * System.out.println(s1);
+		 * System.out.println(s2);
+		 * System.out.println(s3);
+		 * sc.close();
+		 * 
+		 * 
+    Algumas funções matematicas em Java:  (java.lang.Math)
+		 * A = Math.sqrt(x);   -> Variavel Arecebe a raiz quadrada de X.
+		 * A = Math.pow(x, y); -> Variavel A recebe o resultado de X elevado a Y.
+		 * A = Math.abs(x);    -> Variavel A recebe o valor absoluto de X.
+		 * 
