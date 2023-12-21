@@ -69,3 +69,53 @@ Para entrada de dados em java devemos criar um objeto do tipo "Scanner"
 		 * A = Math.pow(x, y); -> Variavel A recebe o resultado de X elevado a Y.
 		 * A = Math.abs(x);    -> Variavel A recebe o valor absoluto de X.
 		 * 
+		 
+		 
+	Operadores comparativos: Operador Significado
+                         >     maior
+                         <     menor
+                        >=     maior ou igual
+                        <=     menor ou igual
+                        ==     igual
+                        !=     diferente	 
+	
+	Operadores lógicos: Operador Significado
+                    &&    E
+                    ||    OU
+                     !    NÃO
+                     
+   Operadores de atribuição cumulativa
+   
+        a += b; a = a + b;
+        a -= b; a = a - b;
+        a *= b; a = a * b;
+        a /= b; a = a / b;
+        a %= b; a = a % b;     
+        
+   Expressão condicional ternária : 
+   
+   Estrutura opcional ao if-else quando se deseja decidir um VALOR com base em uma condição.
+   
+   Sintaxe:
+   ( condição ) ? valor_se_verdadeiro : valor_se_falso
+   
+   Exemplo   
+   ( 2 > 4 ) ? 50 : 80 resposta: 80
+   
+   
+   Exemplo:
+   
+   double preco = 34.5;
+   double desconto;
+      if (preco < 20.0) {
+      desconto = preco * 0.1;
+      }
+        else {
+           desconto = preco * 0.05;
+         }
+         
+   ------------------------------------
+   Mesmo resultado com diferente codigo. 
+   
+   double preco = 34.5;
+   double desconto = (preco < 20.0) ? preco * 0.1 : preco * 0.05;
