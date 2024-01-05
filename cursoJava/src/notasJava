@@ -92,6 +92,8 @@ Para entrada de dados em java devemos criar um objeto do tipo "Scanner"
         a /= b; a = a / b;
         a %= b; a = a % b;     
         
+   -----------------------------------------------------------------------------------------------------------------------------     
+        
    Expressão condicional ternária : 
    
    Estrutura opcional ao if-else quando se deseja decidir um VALOR com base em uma condição.
@@ -114,7 +116,7 @@ Para entrada de dados em java devemos criar um objeto do tipo "Scanner"
            desconto = preco * 0.05;
          }
          
-   ------------------------------------
+   ....................................
    Mesmo resultado com diferente codigo. 
    
    double preco = 34.5;
@@ -130,3 +132,18 @@ Para entrada de dados em java devemos criar um objeto do tipo "Scanner"
          • Para executar uma linha:
            F6
          • Para interromper o debug:(botão vermelho)
+         
+         
+  -----------------------------------------------------------------------------------------------------------------------------       
+  Estrutura repetitiva enquanto (while):
+  
+   É uma estrutura de controle que repete um bloco de comandos enquanto uma condição for ver5dadeira.
+    
+   Quando usar: quando não se sabe previamente a quantidade de repetições que sera realizada.
+  
+   Regra:
+       • V: executa e volta
+       • F: pula fora
+  
+  
+  

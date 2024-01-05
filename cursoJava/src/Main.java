@@ -21,7 +21,11 @@ public class Main {
 		// EX12();
 		// EX13();
 		// EX14();
-		Terreno();
+		// Terreno();
+		// ExWhile();
+		// EX15();
+		//EX16();
+		EX17();
 	}
 
 	/*
@@ -478,23 +482,135 @@ public class Main {
 		sc.close();
 	}
 
-	//Como executar o debug do Eclipse
-	
+	// Como executar o debug do Eclipse
+
 	public static void Terreno() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
+
 		double largura = sc.nextDouble();
 		double comprimento = sc.nextDouble();
 		double metroQuadrado = sc.nextDouble();
 		double area = largura * comprimento;
 		double preco = area * metroQuadrado;
-		
+
 		System.out.printf("AREA = %.2f%n", area);
 		System.out.printf("PRECO = %.2f%n", preco);
-		
-		
+
 		sc.close();
 	}
 
+	// Estrutura repetitiva enquanto (while):
+	/*
+	 * Fazer um programa que lê números inteiros até que um zero seja lido. Ao final
+	 * mostra a soma dos números lidos.
+	 */
+
+	public static void ExWhile() {
+		Scanner sc = new Scanner(System.in);
+		int x = sc.nextInt();
+
+		int soma = 0;
+		while (x != 0) {
+			soma = soma + x; // soma += x;
+			x = sc.nextInt();
+		}
+
+		System.out.println(soma);
+
+		sc.close();
+
+	}
+
+	// Exercícios sobre estrutura repetitiva while
+
+	/*
+	 * Ex15: Escreva um programa que repita a leitura de uma senha até que ela seja
+	 * válida. Para cada leitura de senha incorreta informada, escrever a mensagem
+	 * "Senha Invalida". Quando a senha for informada corretamente deve ser impressa
+	 * a mensagem "Acesso Permitido" e o algoritmo encerrado. Considere que a senha
+	 * correta é o valor 2002.
+	 */
+
+	public static void EX15() {
+		Scanner sc = new Scanner(System.in);
+		int senha = sc.nextInt();
+
+		while (senha != 2002) {
+			System.out.println("Senha Invalida");
+			senha = sc.nextInt();
+		}
+
+		System.out.println("Acesso Permitido");
+		sc.close();
+	}
+
+	/*
+	 * Ex16: Escreva um programa para ler as coordenadas (X,Y) de uma quantidade
+	 * indeterminada de pontos no sistema cartesiano. Para cada ponto escrever o
+	 * quadrante a que ele pertence. O algoritmo será encerrado quando pelo menos
+	 * uma de duas coordenadas for NULA (nesta situação sem escrever mensagem
+	 * alguma).
+	 */
+
+	public static void EX16() {
+		Scanner sc = new Scanner(System.in);
+		int x = sc.nextInt();
+		int y = sc.nextInt();
+
+		while (x != 0 && y != 0) {
+			if (x > 0 && y > 0) {
+				System.out.println("Primeiro quadrante");
+			} else if (x < 0 && y > 0) {
+				System.out.println("Segundo quadrante");
+			} else if (x < 0 && y < 0) {
+				System.out.println("Terceiro quadrante");
+			} else {
+				System.out.println("Quarto quadrante");
+			}
+			x = sc.nextInt();
+			y = sc.nextInt();
+		}
+
+		sc.close();
+	}
+
+	/*
+	 * Ex17: Um Posto de combustíveis deseja determinar qual de seus produtos tem a
+	 * preferência de seus clientes. Escreva um algoritmo para ler o tipo de
+	 * combustível abastecido (codificado da seguinte forma: 1.Álcool 2.Gasolina
+	 * 3.Diesel 4.Fim). Caso o usuário informe um código inválido (fora da faixa de
+	 * 1 a 4) deve ser solicitado um novo código (até que seja válido). O programa
+	 * será encerrado quando o código informado for o número 4. Deve ser escrito a
+	 * mensagem: "MUITO OBRIGADO" e a quantidade de clientes que abasteceram cada
+	 * tipo de combustível, conforme exemplo.
+	 */
+	
+	public static void EX17() {
+		Scanner sc = new Scanner(System.in);
+		
+		int alcool = 0;
+		int gasolina = 0;
+		int diesel = 0;
+		
+		int codigo = sc.nextInt();
+		
+		while(codigo != 4) {
+			if (codigo == 1) {
+				alcool = alcool + 1; 
+			} else if(codigo == 2) {
+				gasolina = gasolina + 1;
+			}else if(codigo == 3){
+				diesel = diesel + 1;
+			}
+			codigo = sc.nextInt();
+		}
+		
+		System.out.println("Muito Obrigado");
+		System.out.println("Alcool: "+ alcool);
+		System.out.println("Gasolina: "+ gasolina);
+		System.out.println("Diesel: "+ diesel);
+		
+		sc.close();
+	}
 }
