@@ -145,5 +145,22 @@ Para entrada de dados em java devemos criar um objeto do tipo "Scanner"
        • V: executa e volta
        • F: pula fora
   
+  -----------------------------------------------------------------------------------------------------------------------------       
+  Estrutura repetitiva (para):
   
+  É uma estrutura de controle que repete um bloco de comandos para um certo intervalo de valores.
+  
+  Quando usar: quando se sabe previamente a quantidade de repetições, ou o intervalo de valores.
+  
+  Regra: 
+  
+  inicio -> ejecuta somente na primeira vez
+  condição -> V: ejecuta e volta
+           -> F: pula fora
+  incremento -> executa toda vez depois de voltar         
+  
+  for ( início ; condição ; incremento) {
+      comando 1
+      comando 2
+  }
   

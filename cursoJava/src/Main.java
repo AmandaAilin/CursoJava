@@ -24,8 +24,17 @@ public class Main {
 		// Terreno();
 		// ExWhile();
 		// EX15();
-		//EX16();
-		EX17();
+		// EX16();
+		// EX17();
+		// contagemProgressiva();
+		// contagemRegressiva();
+		// EX18();
+		// EX19();
+		// EX20();
+		// EX21();
+		// EX22();
+		//EX23();
+		EX24();
 	}
 
 	/*
@@ -585,31 +594,238 @@ public class Main {
 	 * mensagem: "MUITO OBRIGADO" e a quantidade de clientes que abasteceram cada
 	 * tipo de combustível, conforme exemplo.
 	 */
-	
+
 	public static void EX17() {
 		Scanner sc = new Scanner(System.in);
-		
+
 		int alcool = 0;
 		int gasolina = 0;
 		int diesel = 0;
-		
+
 		int codigo = sc.nextInt();
-		
-		while(codigo != 4) {
+
+		while (codigo != 4) {
 			if (codigo == 1) {
-				alcool = alcool + 1; 
-			} else if(codigo == 2) {
+				alcool = alcool + 1;
+			} else if (codigo == 2) {
 				gasolina = gasolina + 1;
-			}else if(codigo == 3){
+			} else if (codigo == 3) {
 				diesel = diesel + 1;
 			}
 			codigo = sc.nextInt();
 		}
-		
+
 		System.out.println("Muito Obrigado");
-		System.out.println("Alcool: "+ alcool);
-		System.out.println("Gasolina: "+ gasolina);
-		System.out.println("Diesel: "+ diesel);
+		System.out.println("Alcool: " + alcool);
+		System.out.println("Gasolina: " + gasolina);
+		System.out.println("Diesel: " + diesel);
+
+		sc.close();
+	}
+
+	// Exercícios sobre estrutura repetitiva para:
+
+	/*
+	 * ExFor: Fazer um programa que lê um valor inteiro N e depois N números
+	 * inteiros. Ao final, mostra a soma dos N números lidos
+	 */
+
+	public static void ExFor() {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+
+		int soma = 0;
+		// i=i+1
+		for (int i = 0; i > N; i++) {
+			int x = sc.nextInt();
+			soma = soma + x;
+		}
+
+		System.out.println(soma);
+
+		sc.close();
+	}
+
+	/*
+	 * Perceba que a estrutura "para" é ótima para se fazer uma repetição baseada em
+	 * uma CONTAGEM:
+	 */
+
+	public static void contagemProgressiva() {
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < 5; i++) {
+			System.out.println("Valor de i: " + i);
+		}
+
+		sc.close();
+	}
+
+	/*
+	 * Contagem regressiva
+	 */
+
+	public static void contagemRegressiva() {
+		Scanner sc = new Scanner(System.in);
+		for (int i = 4; i >= 0; i--) {
+			System.out.println("Valor de i: " + i);
+		}
+
+		sc.close();
+	}
+
+	// Exercícios sobre estrutura repetitiva for:
+	/*
+	 * Ex18: Leia um valor inteiro X (1 <= X <= 1000). Em seguida mostre os ímpares
+	 * de 1 até X, um valor por linha, inclusive o X, se for o caso.
+	 */
+
+	public static void EX18() {
+		Scanner sc = new Scanner(System.in);
+		int x = sc.nextInt();
+
+		for (int i = 0; i <= x; i++) {
+			if (i % 2 != 0) {
+				System.out.println(i);
+			}
+		}
+
+		sc.close();
+	}
+
+	/*
+	 * Ex19: Leia um valor inteiro N. Este valor será a quantidade de valores
+	 * inteiros X que serão lidos em seguida. Mostre quantos destes valores X estão
+	 * dentro do intervalo [10,20] e quantos estão fora do intervalo, mostrando
+	 * essas informações conforme exemplo (use a palavra "in" para dentro do
+	 * intervalo, e "out" para fora do intervalo).
+	 */
+
+	public static void EX19() {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int in = 0;
+		int out = 0;
+
+		for (int i = 0; i < N; i++) {
+			int x = sc.nextInt();
+			if (x >= 10 && x <= 20) {
+				in = in + 1;
+			} else {
+				out = out + 1;
+			}
+		}
+		System.out.println(in + " in");
+		System.out.println(out + " out");
+
+		sc.close();
+	}
+
+	/*
+	 * Ex20: Leia 1 valor inteiro N, que representa o número de casos de teste que
+	 * vem a seguir. Cada caso de teste consiste de 3 valores reais, cada um deles
+	 * com uma casa decimal. Apresente a média ponderada para cada um destes
+	 * conjuntos de 3 valores, sendo que o primeiro valor tem peso 2, o segundo
+	 * valor tem peso 3 e o terceiro valor tem peso 5.
+	 */
+
+	public static void EX20() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+
+		for (int i = 0; i < N; i++) {
+			double a = sc.nextDouble();
+			double b = sc.nextDouble();
+			double c = sc.nextDouble();
+			double media = (a * 2.0 + b * 3.0 + c * 5.0) / 10.0; // 10 é a soma dos pesos
+
+			System.out.printf("%.1f%n", media);
+		}
+
+		sc.close();
+	}
+
+	/*
+	 * Ex21: Fazer um programa para ler um número N. Depois leia N pares de números
+	 * e mostre a divisão do primeiro pelo segundo. Se o denominador for igual a
+	 * zero, mostrar a mensagem "divisao impossivel"
+	 */
+
+	public static void EX21() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+
+		for (int i = 0; i < N; i++) {
+
+			int a = sc.nextInt();
+			int b = sc.nextInt();
+
+			if (b == 0) {
+				System.out.println("divisao impossivel");
+			} else {
+				double div = (double) a / b;
+				System.out.printf("%.1f%n", div);
+			}
+
+		}
+
+		sc.close();
+	}
+
+	/*
+	 * Ex22: Ler um valor N. Calcular e escrever seu respectivo fatorial. Fatorial
+	 * de N = N * (N-1) * (N-2) * (N-3) * ... * 1. Lembrando que, por definição,
+	 * fatorial de 0 é 1.
+	 */
+
+	public static void EX22() {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+
+		int fat = 1;
+		for (int i = 1; i <= N; i++) {
+			fat = fat * i;
+		}
+		System.out.println(fat);
+
+		sc.close();
+	}
+
+	/*
+	 * Ex23: Ler um número inteiro N e calcular todos os seus divisores.
+	 */
+	public static void EX23() {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+
+		for (int i = 1; i <= N; i++) {
+			if (N % i == 0) {
+				System.out.println(i);
+			}
+		}
+
+		sc.close();
+	}
+
+	/*
+	 * Ex24: Fazer um programa para ler um número inteiro positivo N. O programa
+	 * deve então mostrar na tela N linhas, começando de 1 até N. Para cada linha,
+	 * mostrar o número da linha, depois o quadrado e o cubo do valor, conforme
+	 * exemplo.
+	 */
+	
+	public static void EX24() {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		
+		for(int i = 1; i<=N; i++) {
+			int linhas = i;
+			int quadrado = i*i;
+			int cubo = i*i*i;
+			
+			System.out.printf("%d %d %d%n", linhas, quadrado, cubo);
+		}
 		
 		sc.close();
 	}
