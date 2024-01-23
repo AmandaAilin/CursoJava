@@ -1,6 +1,12 @@
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Employee;
+import entities.Product;
+import entities.Rectangle;
+import entities.Student;
+import entities.Triangle;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -34,8 +40,13 @@ public class Main {
 		// EX21();
 		// EX22();
 		// EX23();
-		//EX24();
-		fahrenheit();
+		// EX24();
+		// Fahrenheit();
+		// Triangle();
+		// Product();
+		// Rectangle();
+		//Employee();
+		Student();
 	}
 
 	/*
@@ -833,12 +844,12 @@ public class Main {
 
 	// Estrutura repetitiva "faça-enquanto":
 	/*
-	 * ExFahrenheit: Fazer um programa para ler uma temperatura em Celsius e mostrar o equivalente
-	 * em Fahrenheit. Perguntar se o usuário deseja repetir (s/n). Caso o usuário
-	 * digite "s", repetir o programa. Fórmula: = + 32
+	 * ExFahrenheit: Fazer um programa para ler uma temperatura em Celsius e mostrar
+	 * o equivalente em Fahrenheit. Perguntar se o usuário deseja repetir (s/n).
+	 * Caso o usuário digite "s", repetir o programa. Fórmula: = + 32
 	 */
 
-	public static void fahrenheit() {
+	public static void Fahrenheit() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		char resp;
@@ -851,6 +862,190 @@ public class Main {
 			resp = sc.next().charAt(0);
 		} while (resp != 'n');
 		sc.close();
+	}
+
+	// Sessão 8:
+
+	/*
+	 * ExTriangulo: Fazer um programa para ler as medidas dos lados de dois
+	 * triângulos X e Y (suponha medidas válidas). Em seguida, mostrar o valor das
+	 * áreas dos dois triângulos e dizer qual dos dois triângulos possui a maior
+	 * área. A fórmula para calcular a área de um triângulo a partir das medidas de
+	 * seus lados a, b e c é a seguinte (fórmula de Heron): area
+	 */
+	public static void Triangle() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		Triangle x, y;
+		x = new Triangle(); // Instanciação
+		y = new Triangle();
+
+		System.out.println("Enter the measures of triangle X: ");
+		x.a = sc.nextDouble();
+		x.b = sc.nextDouble();
+		x.c = sc.nextDouble();
+		System.out.println("Enter the measures of triangle Y: ");
+		y.a = sc.nextDouble();
+		y.b = sc.nextDouble();
+		y.c = sc.nextDouble();
+
+		double areaX = x.area();
+		double areaY = y.area();
+
+		System.out.printf("Triangle X area: %.4f%n", areaX);
+		System.out.printf("Triangle Y area: %.4f%n", areaY);
+		if (areaX > areaY) {
+			System.out.println("Larger area: X");
+		} else {
+			System.out.println("Larger area: Y");
+		}
+
+		sc.close();
+	}
+
+	/*
+	 * Instanciação: (alocação dinâmica de memória)
+	 * 
+	 * -> Stack: memoria estatica Memória -> Heap: memoria com objetos dinamicos
+	 */
+
+	/*
+	 * ExProduct: Fazer um programa para ler os dados de um produto em estoque
+	 * (nome, preço e quantidade no estoque). Em seguida: • Mostrar os dados do
+	 * produto (nome, preço, quantidade no estoque, valor total no estoque) •
+	 * Realizar uma entrada no estoque e mostrar novamente os dados do produto •
+	 * Realizar uma saída no estoque e mostrar novamente os dados do produto • Para
+	 * resolver este problema, você deve criar uma CLASSE
+	 */
+
+	public static void Product() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		Product product = new Product();
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		product.name = sc.nextLine();
+		System.out.print("Price: ");
+		product.price = sc.nextDouble();
+		System.out.print("Quantity in stock: ");
+		product.quantity = sc.nextInt();
+
+		System.out.println();
+		System.out.println("Product data: " + product);
+
+		System.out.println();
+		System.out.println("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		product.addProducts(quantity);
+
+		System.out.println();
+		System.out.println("Updated data: " + product);
+
+		System.out.println();
+		System.out.println("Enter the number of products to be removed from stock:  ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+
+		System.out.println();
+		System.out.println("Updated data: " + product);
+
+		sc.close();
+	}
+
+	// Exercícios de fixação
+	/*
+	 * Ex25: Fazer um programa para ler os valores da largura e altura de um
+	 * retângulo. Em seguida, mostrar na tela o valor de sua área, perímetro e
+	 * diagonal. Usar uma classe como mostrado no projeto ao lado.
+	 * 
+	 */
+
+	public static void Rectangle() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Rectangle rectangle = new Rectangle();
+
+		System.out.println("Enter rectangle width and height: ");
+		rectangle.width = sc.nextDouble();
+		rectangle.height = sc.nextDouble();
+
+		System.out.printf("AREA = %.2f%n", rectangle.area());
+		System.out.printf("PERIMETER = %.2f%n", rectangle.perimeter());
+		System.out.printf("DIAGONAL = %.2f%n", rectangle.diagonal());
+
+		sc.close();
+	}
+
+	/*
+	 * Ex26:Fazer um programa para ler os dados de um funcionário (nome, salário
+	 * bruto e imposto). Em seguida, mostrar os dados do funcionário (nome e salário
+	 * líquido). Em seguida, aumentar o salário do funcionário com base em uma
+	 * porcentagem dada (somente o salário bruto é afetado pela porcentagem) e
+	 * mostrar novamente os dados do funcionário. Use a classe projetada abaixo.
+	 * 
+	 */
+
+	public static void Employee() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Employee emp = new Employee();
+
+		System.out.print("Name: ");
+		emp.name = sc.nextLine();
+		System.out.print("Gross salary: ");
+		emp.grossSalary = sc.nextDouble();
+		System.out.print("Tax: ");
+		emp.tax = sc.nextDouble();
+
+		System.out.println();
+		System.out.println("Employee: " + emp);
+
+		System.out.println();
+		System.out.println("Which percentage to increase salary? ");
+		double percentage = sc.nextDouble();
+		emp.increaseSalary(percentage);
+
+		System.out.println();
+		System.out.println("Updated data: " + emp);
+
+		sc.close();
+
+	}
+
+	/*
+	 * Ex27:Fazer um programa para ler o nome de um aluno e as três notas que ele
+	 * obteve nos três trimestres do ano (primeiro trimestre vale 30 e o segundo e
+	 * terceiro valem 35 cada). Ao final, mostrar qual a nota final do aluno no ano.
+	 * Dizer também se o aluno está aprovado (PASS) ou não (FAILED) e, em caso
+	 * negativo, quantos pontos faltam para o aluno obter o mínimo para ser aprovado
+	 * (que é 60% da nota). Você deve criar uma classe Student para resolver este
+	 * problema.
+	 * 
+	 */
+
+	public static void Student() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Student student = new Student();
+		
+		student.name = sc.nextLine();
+		student.grade1 = sc.nextDouble();
+		student.grade2 = sc.nextDouble();
+		student.grade3 = sc.nextDouble();
+		
+		System.out.printf("FINAL GRADE = %.2f%n", student.notaFinal());
+		if(student.notaFinal() < 60.0) {
+			System.out.println("FAILED");
+			System.out.printf("MISSING %.2f POINTS%n", student.missingPoint());
+		} else {
+			System.out.println("PASS");
+
+		}
+		
+		sc.close();
+
 	}
 
 }

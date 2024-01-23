@@ -230,3 +230,28 @@ Para entrada de dados em java devemos criar um objeto do tipo "Scanner"
     - Funções podem ou não retornar uma saída
   • Em orientação a objetos, funções em classes recebem o nome de
     "métodos"
+    
+  -----------------------------------------------------------------------------------------------------------------------------       
+   
+   Classe:
+   
+        É um tipo estruturado que pode conter (membros):
+                   • Atributos (dados / campos)
+                   • Métodos (funções / operações)
+
+        A classe também pode prover muitos outros recursos, tais como:
+                   • Construtores
+                   • Sobrecarga
+                   • Encapsulamento
+                   • Herança
+                   • Polimorfismo
+       Exemplos:
+                   • Entidades: Produto, Cliente, Triangulo
+                   • Serviços: ProdutoService, ClienteService, EmailService, StorageService
+                   • Controladores: ProdutoController, ClienteController
+                   • Utilitários: Calculadora, Compactador
+                   • Outros (views, repositórios, gerenciadores, etc.) 
+  -----------------------------------------------------------------------------------------------------------------------------       
+  
+  
+                   
