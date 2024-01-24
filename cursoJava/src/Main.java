@@ -13,10 +13,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		// ExFixacao();
-		// Ex01();
-		// Ex02();
-		// Ex03();
-		// Ex04();
+		// EX01();
+		// EX02();
+		// EX03();
+		// EX04();
 		// Ex05();
 		// Ex06();
 		// Telefonia();
@@ -34,8 +34,8 @@ public class Main {
 		// EX15();
 		// EX16();
 		// EX17();
-		// contagemProgressiva();
-		// contagemRegressiva();
+		// ContagemProgressiva();
+		// ContagemRegressiva();
 		// EX18();
 		// EX19();
 		// EX20();
@@ -49,10 +49,45 @@ public class Main {
 		// EX27();
 		// EX28();
 		// EX29();
-		//Calculator();
+		// Calculator();
 		EX30();
-		
+
 	}
+
+	/*
+	 * Para entrada de dados em java devemos criar um objeto do tipo "Scanner"
+	 * 
+	 * Scanner sc = new Scanner(System.in); para que el scanner funcione temos que
+	 * importar "import java.util.Scanner;" e fazer o "sc.close();" quando não
+	 * precisar mais do objeto sc.
+----------------------------------------------------------------------------------------------------------------------------- 
+	 * Algumas funções matematicas em Java:  (java.lang.Math)
+		 * A = Math.sqrt(x);   -> Variavel Arecebe a raiz quadrada de X.
+		 * A = Math.pow(x, y); -> Variavel A recebe o resultado de X elevado a Y.
+		 * A = Math.abs(x);    -> Variavel A recebe o valor absoluto de X.
+		 
+----------------------------------------------------------------------------------------------------------------------------- 	   
+	   Operadores comparativos: Operador Significado
+                         >     maior
+                         <     menor
+                        >=     maior ou igual
+                        <=     menor ou igual
+                        ==     igual
+                        !=     diferente	
+-----------------------------------------------------------------------------------------------------------------------------        
+       Operadores lógicos: Operador Significado
+                    &&    E
+                    ||    OU
+                     !    NÃO
+-----------------------------------------------------------------------------------------------------------------------------                      
+       Operadores de atribuição cumulativa
+   
+        a += b; a = a + b;
+        a -= b; a = a - b;
+        a *= b; a = a * b;
+        a /= b; a = a / b;
+        a %= b; a = a % b; 
+	 */
 
 	/*
 	 * Exercício de fixação: Em um novo programa, inicie as seguintes variáveis
@@ -87,7 +122,7 @@ public class Main {
 	 * Ex01: Faça um programa para ler dois valores inteiros, e depois mostrar na
 	 * tela a soma desses números com uma mensagem explicativa, conforme exemplos.
 	 */
-	public static void Ex01() {
+	public static void EX01() {
 		Scanner sc = new Scanner(System.in);
 		int a, b, soma;
 		a = sc.nextInt();
@@ -104,7 +139,7 @@ public class Main {
 	 * exemplos. Fórmula da área: area = π . raio^2 Considere o valor de π = 3.14159
 	 */
 
-	public static void Ex02() {
+	public static void EX02() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		double R, A, pi = 3.14159;
@@ -124,7 +159,7 @@ public class Main {
 	 * D segundo a fórmula: DIFERENCA = (A * B - C * D).
 	 */
 
-	public static void Ex03() {
+	public static void EX03() {
 		Scanner sc = new Scanner(System.in);
 		int A, B, C, D, Diferenca;
 
@@ -146,7 +181,7 @@ public class Main {
 	 * casas decimais.
 	 */
 
-	public static void Ex04() {
+	public static void EX04() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		int numero, horas;
@@ -169,20 +204,20 @@ public class Main {
 	 * e o valor unitário de cada peça 2. Calcule e mostre o valor a ser pago
 	 */
 
-	public static void Ex05() {
+	public static void EX05() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		int cod1, cod2, qde1, qde2;
+		int cod1, cod2, qte1, qte2;
 		double preco1, preco2, total;
 
 		cod1 = sc.nextInt();
-		qde1 = sc.nextInt();
+		qte1 = sc.nextInt();
 		preco1 = sc.nextDouble();
 		cod2 = sc.nextInt();
-		qde2 = sc.nextInt();
+		qte2 = sc.nextInt();
 		preco2 = sc.nextDouble();
 
-		total = qde1 * preco1 + qde2 * preco2;
+		total = qte1 * preco1 + qte2 * preco2;
 
 		System.out.printf("Valor a pagar : R$ %.2f%n", total);
 		sc.close();
@@ -196,7 +231,7 @@ public class Main {
 	 * d) a área do quadrado que tem lado B. e) a área do retângulo que tem lados A
 	 * e B.
 	 */
-	public static void Ex06() {
+	public static void EX06() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		double A, B, C, pi = 3.14159, triangulo, circulo, trapezio, quadrado, retangulo;
@@ -220,6 +255,95 @@ public class Main {
 		sc.close();
 	}
 
+	/*
+   Expressão condicional ternária : 
+   
+   Estrutura opcional ao if-else quando se deseja decidir um VALOR com base em uma condição.
+   
+   Sintaxe:
+   ( condição ) ? valor_se_verdadeiro : valor_se_falso
+   
+   Exemplo   
+   ( 2 > 4 ) ? 50 : 80 resposta: 80
+   
+   
+   Exemplo:
+   
+   double preco = 34.5;
+   double desconto;
+      if (preco < 20.0) {
+      desconto = preco * 0.1;
+      }
+        else {
+           desconto = preco * 0.05;
+         }
+         
+   ....................................
+   Mesmo resultado com diferente codigo. 
+   
+   double preco = 34.5;
+   double desconto = (preco < 20.0) ? preco * 0.1 : preco * 0.05;
+   
+   -----------------------------------------------------------------------------------------------------------------------------
+   Como executar o debug do Eclipse:
+   
+         • Para marcar uma linha de breakpoint:
+           Run -> Toggle Breakpoint
+         • Para iniciar o debug:
+           Botão direito na classe -> Debug as -> Java Application
+         • Para executar uma linha:
+           F6
+         • Para interromper o debug:(botão vermelho)
+         
+         
+  -----------------------------------------------------------------------------------------------------------------------------       
+  Estrutura repetitiva enquanto (while):
+  
+   É uma estrutura de controle que repete um bloco de comandos enquanto uma condição for ver5dadeira.
+    
+   Quando usar: quando não se sabe previamente a quantidade de repetições que sera realizada.
+  
+   Regra:
+       • V: executa e volta
+       • F: pula fora
+  
+  -----------------------------------------------------------------------------------------------------------------------------       
+  Estrutura repetitiva (para):
+  
+  É uma estrutura de controle que repete um bloco de comandos para um certo intervalo de valores.
+  
+  Quando usar: quando se sabe previamente a quantidade de repetições, ou o intervalo de valores.
+  
+  Regra: 
+  
+  inicio -> ejecuta somente na primeira vez
+  condição -> V: ejecuta e volta
+           -> F: pula fora
+  incremento -> executa toda vez depois de voltar         
+  
+  for ( início ; condição ; incremento) {
+      comando 1
+      comando 2
+  }
+  
+  -----------------------------------------------------------------------------------------------------------------------------       
+  
+  Estrutura repetitiva "faça-enquanto"
+  O bloco de comandos executa pelo menos uma vez, pois a condição é verificada no final.
+  
+  
+  Sintaxe: do {
+               comando 1
+               comando 2
+           } while ( condição );
+           
+           Regra:
+             V: volta
+             F: pula fora
+  
+	 */
+	
+	
 	// Estrutura condicional
 	/*
 	 * Uma operadora de telefonia cobra R$ 50.00 por um plano básico que dá direito
@@ -668,7 +792,7 @@ public class Main {
 	 * uma CONTAGEM:
 	 */
 
-	public static void contagemProgressiva() {
+	public static void ContagemProgressiva() {
 		Scanner sc = new Scanner(System.in);
 		for (int i = 0; i < 5; i++) {
 			System.out.println("Valor de i: " + i);
@@ -681,7 +805,7 @@ public class Main {
 	 * Contagem regressiva
 	 */
 
-	public static void contagemRegressiva() {
+	public static void ContagemRegressiva() {
 		Scanner sc = new Scanner(System.in);
 		for (int i = 4; i >= 0; i--) {
 			System.out.println("Valor de i: " + i);
@@ -869,14 +993,86 @@ public class Main {
 		sc.close();
 	}
 
-	// Sessão 8:
+	/*
+  Restrições para nomes de variáveis:
+  
+  • Não pode começar com dígito: use uma letra ou _
+  • Não usar acentos ou til
+  • Não pode ter espaço em branco
+  • Sugestão: use nomes que tenham um significado
+  
+  Convenções:
+     • Camel Case: lastName
+          pacotes
+          atributos
+          métodos 
+          variáveis e parâmetros
+     • Pascal Case: ProductService 
+          classes
+          
+  -----------------------------------------------------------------------------------------------------------------------------       
+  
+  Operadores bitwise
+  
+  Operador  Significado
+       &       Operação "E" bit a bit
+       |       Operação "OU" bit a bit
+       ^       Operação "OU-exclusivo" bit a bit
+       
+       
+  -----------------------------------------------------------------------------------------------------------------------------       
+       
+  Funções interessantes para String
+  
+  • Formatar: toLowerCase(), toUpperCase(), trim()
+  • Recortar: substring(inicio), substring(inicio, fim)
+  • Substituir: Replace(char, char), Replace(string, string)
+  • Buscar: IndexOf, LastIndexOf
+  • str.Split(" ")
+
+  -----------------------------------------------------------------------------------------------------------------------------       
+  
+  Funções (sintaxe):
+  
+  • Representam um processamento que possui um significado
+    - Math.sqrt(double)
+    - System.out.println(string)
+  • Principais vantagens: modularização, delegação e reaproveitamento
+  • Dados de entrada e saída
+    - Funções podem receber dados de entrada (parâmetros ou argumentos)
+    - Funções podem ou não retornar uma saída
+  • Em orientação a objetos, funções em classes recebem o nome de
+    "métodos"
+    
+  -----------------------------------------------------------------------------------------------------------------------------       
+   
+   Classe:
+   
+        É um tipo estruturado que pode conter (membros):
+                   • Atributos (dados / campos)
+                   • Métodos (funções / operações)
+
+        A classe também pode prover muitos outros recursos, tais como:
+                   • Construtores
+                   • Sobrecarga
+                   • Encapsulamento
+                   • Herança
+                   • Polimorfismo
+       Exemplos:
+                   • Entidades: Produto, Cliente, Triangulo
+                   • Serviços: ProdutoService, ClienteService, EmailService, StorageService
+                   • Controladores: ProdutoController, ClienteController
+                   • Utilitários: Calculadora, Compactador
+                   • Outros (views, repositórios, gerenciadores, etc.) 
+	 */
+	
 
 	/*
-	 * Ex25: Fazer um programa para ler as medidas dos lados de dois
-	 * triângulos X e Y (suponha medidas válidas). Em seguida, mostrar o valor das
-	 * áreas dos dois triângulos e dizer qual dos dois triângulos possui a maior
-	 * área. A fórmula para calcular a área de um triângulo a partir das medidas de
-	 * seus lados a, b e c é a seguinte (fórmula de Heron): area
+	 * Ex25: Fazer um programa para ler as medidas dos lados de dois triângulos X e
+	 * Y (suponha medidas válidas). Em seguida, mostrar o valor das áreas dos dois
+	 * triângulos e dizer qual dos dois triângulos possui a maior área. A fórmula
+	 * para calcular a área de um triângulo a partir das medidas de seus lados a, b
+	 * e c é a seguinte (fórmula de Heron): area
 	 */
 	public static void EX25() {
 		Locale.setDefault(Locale.US);
@@ -916,12 +1112,12 @@ public class Main {
 	 */
 
 	/*
-	 * Ex26: Fazer um programa para ler os dados de um produto em estoque
-	 * (nome, preço e quantidade no estoque). Em seguida: • Mostrar os dados do
-	 * produto (nome, preço, quantidade no estoque, valor total no estoque) •
-	 * Realizar uma entrada no estoque e mostrar novamente os dados do produto •
-	 * Realizar uma saída no estoque e mostrar novamente os dados do produto • Para
-	 * resolver este problema, você deve criar uma CLASSE
+	 * Ex26: Fazer um programa para ler os dados de um produto em estoque (nome,
+	 * preço e quantidade no estoque). Em seguida: • Mostrar os dados do produto
+	 * (nome, preço, quantidade no estoque, valor total no estoque) • Realizar uma
+	 * entrada no estoque e mostrar novamente os dados do produto • Realizar uma
+	 * saída no estoque e mostrar novamente os dados do produto • Para resolver este
+	 * problema, você deve criar uma CLASSE
 	 */
 
 	public static void EX26() {
@@ -1092,25 +1288,25 @@ public class Main {
 	}
 
 	/*
-	 * EX30: Faça um programa para ler a cotação do dólar, e depois
-	 * um valor em dólares a ser comprado por uma pessoa em reais. Informar quantos
-	 * reais a pessoa vai pagar pelos dólares, considerando ainda que a pessoa terá
-	 * que pagar 6% de IOF sobre o valor em dólar. Criar uma classe
-	 * CurrencyConverter para ser responsável pelos cálculos.
+	 * EX30: Faça um programa para ler a cotação do dólar, e depois um valor em
+	 * dólares a ser comprado por uma pessoa em reais. Informar quantos reais a
+	 * pessoa vai pagar pelos dólares, considerando ainda que a pessoa terá que
+	 * pagar 6% de IOF sobre o valor em dólar. Criar uma classe CurrencyConverter
+	 * para ser responsável pelos cálculos.
 	 */
-	
+
 	public static void EX30() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.print("What is the dollar price?");
 		double dollarPrice = sc.nextDouble();
-		
+
 		System.out.print("How many dollars will be bought?");
 		double amount = sc.nextDouble();
 		double result = CurrencyConverter.dollarToReal(amount, dollarPrice);
 		System.out.printf("Amount to be paid in reais = %.2f%n", result);
-		
+
 		sc.close();
 	}
 
