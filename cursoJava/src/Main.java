@@ -6,6 +6,8 @@ import entities.Product;
 import entities.Rectangle;
 import entities.Student;
 import entities.Triangle;
+import util.Calculator;
+import util.CurrencyConverter;
 
 public class Main {
 
@@ -42,11 +44,14 @@ public class Main {
 		// EX23();
 		// EX24();
 		// Fahrenheit();
-		// Triangle();
-		// Product();
-		// Rectangle();
-		//Employee();
-		Student();
+		// EX25();
+		// EX26();
+		// EX27();
+		// EX28();
+		// EX29();
+		//Calculator();
+		EX30();
+		
 	}
 
 	/*
@@ -867,13 +872,13 @@ public class Main {
 	// Sessão 8:
 
 	/*
-	 * ExTriangulo: Fazer um programa para ler as medidas dos lados de dois
+	 * Ex25: Fazer um programa para ler as medidas dos lados de dois
 	 * triângulos X e Y (suponha medidas válidas). Em seguida, mostrar o valor das
 	 * áreas dos dois triângulos e dizer qual dos dois triângulos possui a maior
 	 * área. A fórmula para calcular a área de um triângulo a partir das medidas de
 	 * seus lados a, b e c é a seguinte (fórmula de Heron): area
 	 */
-	public static void Triangle() {
+	public static void EX25() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
@@ -911,7 +916,7 @@ public class Main {
 	 */
 
 	/*
-	 * ExProduct: Fazer um programa para ler os dados de um produto em estoque
+	 * Ex26: Fazer um programa para ler os dados de um produto em estoque
 	 * (nome, preço e quantidade no estoque). Em seguida: • Mostrar os dados do
 	 * produto (nome, preço, quantidade no estoque, valor total no estoque) •
 	 * Realizar uma entrada no estoque e mostrar novamente os dados do produto •
@@ -919,7 +924,7 @@ public class Main {
 	 * resolver este problema, você deve criar uma CLASSE
 	 */
 
-	public static void Product() {
+	public static void EX26() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
@@ -956,13 +961,13 @@ public class Main {
 
 	// Exercícios de fixação
 	/*
-	 * Ex25: Fazer um programa para ler os valores da largura e altura de um
+	 * Ex27: Fazer um programa para ler os valores da largura e altura de um
 	 * retângulo. Em seguida, mostrar na tela o valor de sua área, perímetro e
 	 * diagonal. Usar uma classe como mostrado no projeto ao lado.
 	 * 
 	 */
 
-	public static void Rectangle() {
+	public static void EX27() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		Rectangle rectangle = new Rectangle();
@@ -979,7 +984,7 @@ public class Main {
 	}
 
 	/*
-	 * Ex26:Fazer um programa para ler os dados de um funcionário (nome, salário
+	 * Ex28:Fazer um programa para ler os dados de um funcionário (nome, salário
 	 * bruto e imposto). Em seguida, mostrar os dados do funcionário (nome e salário
 	 * líquido). Em seguida, aumentar o salário do funcionário com base em uma
 	 * porcentagem dada (somente o salário bruto é afetado pela porcentagem) e
@@ -987,7 +992,7 @@ public class Main {
 	 * 
 	 */
 
-	public static void Employee() {
+	public static void EX28() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		Employee emp = new Employee();
@@ -1015,7 +1020,7 @@ public class Main {
 	}
 
 	/*
-	 * Ex27:Fazer um programa para ler o nome de um aluno e as três notas que ele
+	 * Ex29:Fazer um programa para ler o nome de um aluno e as três notas que ele
 	 * obteve nos três trimestres do ano (primeiro trimestre vale 30 e o segundo e
 	 * terceiro valem 35 cada). Ao final, mostrar qual a nota final do aluno no ano.
 	 * Dizer também se o aluno está aprovado (PASS) ou não (FAILED) e, em caso
@@ -1025,27 +1030,88 @@ public class Main {
 	 * 
 	 */
 
-	public static void Student() {
+	public static void EX29() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		Student student = new Student();
-		
+
 		student.name = sc.nextLine();
 		student.grade1 = sc.nextDouble();
 		student.grade2 = sc.nextDouble();
 		student.grade3 = sc.nextDouble();
-		
+
 		System.out.printf("FINAL GRADE = %.2f%n", student.notaFinal());
-		if(student.notaFinal() < 60.0) {
+		if (student.notaFinal() < 60.0) {
 			System.out.println("FAILED");
 			System.out.printf("MISSING %.2f POINTS%n", student.missingPoint());
 		} else {
 			System.out.println("PASS");
 
 		}
-		
+
 		sc.close();
 
+	}
+
+	/*
+	 * Membros estáticos: Também chamados membros de classe
+	 * 
+	 * São membros que fazem sentido independentemente de objetos. Não precisam de
+	 * objeto para serem chamados. São chamados a partir do próprio nome da classe.
+	 * 
+	 * Uma classe que possui somente membros estáticos, pode ser uma classe estática
+	 * também. Esta classe não poderá ser instanciada.
+	 */
+
+	/*
+	 * EX: Calculator Fazer um programa para ler um valor numérico qualquer, e daí
+	 * mostrar quanto seria o valor de uma circunferência e do volume de uma esfera
+	 * para um raio daquele valor. Informar também o valor de PI com duas casas
+	 * decimais.
+	 * 
+	 * 
+	 * no caso da calculadora, os valores dos cálculos não mudam para calculadoras
+	 * diferentes, ou seja, são cálculos estáticos. O valor de Pi também é estático.
+	 */
+
+	public static void Calculator() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Enter radius: ");
+		double radius = sc.nextDouble();
+
+		double c = Calculator.circumference(radius);
+		double v = Calculator.volume(radius);
+
+		System.out.printf("Circumference: %.2f%n", c);
+		System.out.printf("Volume: %.2f%n", v);
+		System.out.printf("PI value: %.2f%n", Calculator.PI);
+
+		sc.close();
+	}
+
+	/*
+	 * EX30: Faça um programa para ler a cotação do dólar, e depois
+	 * um valor em dólares a ser comprado por uma pessoa em reais. Informar quantos
+	 * reais a pessoa vai pagar pelos dólares, considerando ainda que a pessoa terá
+	 * que pagar 6% de IOF sobre o valor em dólar. Criar uma classe
+	 * CurrencyConverter para ser responsável pelos cálculos.
+	 */
+	
+	public static void EX30() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("What is the dollar price?");
+		double dollarPrice = sc.nextDouble();
+		
+		System.out.print("How many dollars will be bought?");
+		double amount = sc.nextDouble();
+		double result = CurrencyConverter.dollarToReal(amount, dollarPrice);
+		System.out.printf("Amount to be paid in reais = %.2f%n", result);
+		
+		sc.close();
 	}
 
 }
