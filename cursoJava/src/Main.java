@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import entities.Employee;
 import entities.Product;
+import entities.ProductConstructor;
 import entities.Rectangle;
 import entities.Student;
 import entities.Triangle;
@@ -50,7 +51,8 @@ public class Main {
 		// EX28();
 		// EX29();
 		// Calculator();
-		EX30();
+		//EX30();
+		EX31();
 
 	}
 
@@ -60,33 +62,25 @@ public class Main {
 	 * Scanner sc = new Scanner(System.in); para que el scanner funcione temos que
 	 * importar "import java.util.Scanner;" e fazer o "sc.close();" quando não
 	 * precisar mais do objeto sc.
------------------------------------------------------------------------------------------------------------------------------ 
-	 * Algumas funções matematicas em Java:  (java.lang.Math)
-		 * A = Math.sqrt(x);   -> Variavel Arecebe a raiz quadrada de X.
-		 * A = Math.pow(x, y); -> Variavel A recebe o resultado de X elevado a Y.
-		 * A = Math.abs(x);    -> Variavel A recebe o valor absoluto de X.
-		 
------------------------------------------------------------------------------------------------------------------------------ 	   
-	   Operadores comparativos: Operador Significado
-                         >     maior
-                         <     menor
-                        >=     maior ou igual
-                        <=     menor ou igual
-                        ==     igual
-                        !=     diferente	
------------------------------------------------------------------------------------------------------------------------------        
-       Operadores lógicos: Operador Significado
-                    &&    E
-                    ||    OU
-                     !    NÃO
------------------------------------------------------------------------------------------------------------------------------                      
-       Operadores de atribuição cumulativa
-   
-        a += b; a = a + b;
-        a -= b; a = a - b;
-        a *= b; a = a * b;
-        a /= b; a = a / b;
-        a %= b; a = a % b; 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------ Algumas funções matematicas
+	 * em Java: (java.lang.Math) A = Math.sqrt(x); -> Variavel Arecebe a raiz
+	 * quadrada de X. A = Math.pow(x, y); -> Variavel A recebe o resultado de X
+	 * elevado a Y. A = Math.abs(x); -> Variavel A recebe o valor absoluto de X.
+	 * 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------ Operadores comparativos:
+	 * Operador Significado > maior < menor >= maior ou igual <= menor ou igual ==
+	 * igual != diferente
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------ Operadores lógicos: Operador
+	 * Significado && E || OU ! NÃO
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------ Operadores de atribuição
+	 * cumulativa
+	 * 
+	 * a += b; a = a + b; a -= b; a = a - b; a *= b; a = a * b; a /= b; a = a / b; a
+	 * %= b; a = a % b;
 	 */
 
 	/*
@@ -256,94 +250,76 @@ public class Main {
 	}
 
 	/*
-   Expressão condicional ternária : 
-   
-   Estrutura opcional ao if-else quando se deseja decidir um VALOR com base em uma condição.
-   
-   Sintaxe:
-   ( condição ) ? valor_se_verdadeiro : valor_se_falso
-   
-   Exemplo   
-   ( 2 > 4 ) ? 50 : 80 resposta: 80
-   
-   
-   Exemplo:
-   
-   double preco = 34.5;
-   double desconto;
-      if (preco < 20.0) {
-      desconto = preco * 0.1;
-      }
-        else {
-           desconto = preco * 0.05;
-         }
-         
-   ....................................
-   Mesmo resultado com diferente codigo. 
-   
-   double preco = 34.5;
-   double desconto = (preco < 20.0) ? preco * 0.1 : preco * 0.05;
-   
-   -----------------------------------------------------------------------------------------------------------------------------
-   Como executar o debug do Eclipse:
-   
-         • Para marcar uma linha de breakpoint:
-           Run -> Toggle Breakpoint
-         • Para iniciar o debug:
-           Botão direito na classe -> Debug as -> Java Application
-         • Para executar uma linha:
-           F6
-         • Para interromper o debug:(botão vermelho)
-         
-         
-  -----------------------------------------------------------------------------------------------------------------------------       
-  Estrutura repetitiva enquanto (while):
-  
-   É uma estrutura de controle que repete um bloco de comandos enquanto uma condição for ver5dadeira.
-    
-   Quando usar: quando não se sabe previamente a quantidade de repetições que sera realizada.
-  
-   Regra:
-       • V: executa e volta
-       • F: pula fora
-  
-  -----------------------------------------------------------------------------------------------------------------------------       
-  Estrutura repetitiva (para):
-  
-  É uma estrutura de controle que repete um bloco de comandos para um certo intervalo de valores.
-  
-  Quando usar: quando se sabe previamente a quantidade de repetições, ou o intervalo de valores.
-  
-  Regra: 
-  
-  inicio -> ejecuta somente na primeira vez
-  condição -> V: ejecuta e volta
-           -> F: pula fora
-  incremento -> executa toda vez depois de voltar         
-  
-  for ( início ; condição ; incremento) {
-      comando 1
-      comando 2
-  }
-  
-  -----------------------------------------------------------------------------------------------------------------------------       
-  
-  Estrutura repetitiva "faça-enquanto"
-  O bloco de comandos executa pelo menos uma vez, pois a condição é verificada no final.
-  
-  
-  Sintaxe: do {
-               comando 1
-               comando 2
-           } while ( condição );
-           
-           Regra:
-             V: volta
-             F: pula fora
-  
+	 * Expressão condicional ternária :
+	 * 
+	 * Estrutura opcional ao if-else quando se deseja decidir um VALOR com base em
+	 * uma condição.
+	 * 
+	 * Sintaxe: ( condição ) ? valor_se_verdadeiro : valor_se_falso
+	 * 
+	 * Exemplo ( 2 > 4 ) ? 50 : 80 resposta: 80
+	 * 
+	 * 
+	 * Exemplo:
+	 * 
+	 * double preco = 34.5; double desconto; if (preco < 20.0) { desconto = preco *
+	 * 0.1; } else { desconto = preco * 0.05; }
+	 * 
+	 * .................................... Mesmo resultado com diferente codigo.
+	 * 
+	 * double preco = 34.5; double desconto = (preco < 20.0) ? preco * 0.1 : preco *
+	 * 0.05;
+	 * 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------ Como executar o debug do
+	 * Eclipse:
+	 * 
+	 * • Para marcar uma linha de breakpoint: Run -> Toggle Breakpoint • Para
+	 * iniciar o debug: Botão direito na classe -> Debug as -> Java Application •
+	 * Para executar uma linha: F6 • Para interromper o debug:(botão vermelho)
+	 * 
+	 * 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------ Estrutura repetitiva
+	 * enquanto (while):
+	 * 
+	 * É uma estrutura de controle que repete um bloco de comandos enquanto uma
+	 * condição for ver5dadeira.
+	 * 
+	 * Quando usar: quando não se sabe previamente a quantidade de repetições que
+	 * sera realizada.
+	 * 
+	 * Regra: • V: executa e volta • F: pula fora
+	 * 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------ Estrutura repetitiva (para):
+	 * 
+	 * É uma estrutura de controle que repete um bloco de comandos para um certo
+	 * intervalo de valores.
+	 * 
+	 * Quando usar: quando se sabe previamente a quantidade de repetições, ou o
+	 * intervalo de valores.
+	 * 
+	 * Regra:
+	 * 
+	 * inicio -> ejecuta somente na primeira vez condição -> V: ejecuta e volta ->
+	 * F: pula fora incremento -> executa toda vez depois de voltar
+	 * 
+	 * for ( início ; condição ; incremento) { comando 1 comando 2 }
+	 * 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------
+	 * 
+	 * Estrutura repetitiva "faça-enquanto" O bloco de comandos executa pelo menos
+	 * uma vez, pois a condição é verificada no final.
+	 * 
+	 * 
+	 * Sintaxe: do { comando 1 comando 2 } while ( condição );
+	 * 
+	 * Regra: V: volta F: pula fora
+	 * 
 	 */
-	
-	
+
 	// Estrutura condicional
 	/*
 	 * Uma operadora de telefonia cobra R$ 50.00 por um plano básico que dá direito
@@ -994,78 +970,59 @@ public class Main {
 	}
 
 	/*
-  Restrições para nomes de variáveis:
-  
-  • Não pode começar com dígito: use uma letra ou _
-  • Não usar acentos ou til
-  • Não pode ter espaço em branco
-  • Sugestão: use nomes que tenham um significado
-  
-  Convenções:
-     • Camel Case: lastName
-          pacotes
-          atributos
-          métodos 
-          variáveis e parâmetros
-     • Pascal Case: ProductService 
-          classes
-          
-  -----------------------------------------------------------------------------------------------------------------------------       
-  
-  Operadores bitwise
-  
-  Operador  Significado
-       &       Operação "E" bit a bit
-       |       Operação "OU" bit a bit
-       ^       Operação "OU-exclusivo" bit a bit
-       
-       
-  -----------------------------------------------------------------------------------------------------------------------------       
-       
-  Funções interessantes para String
-  
-  • Formatar: toLowerCase(), toUpperCase(), trim()
-  • Recortar: substring(inicio), substring(inicio, fim)
-  • Substituir: Replace(char, char), Replace(string, string)
-  • Buscar: IndexOf, LastIndexOf
-  • str.Split(" ")
-
-  -----------------------------------------------------------------------------------------------------------------------------       
-  
-  Funções (sintaxe):
-  
-  • Representam um processamento que possui um significado
-    - Math.sqrt(double)
-    - System.out.println(string)
-  • Principais vantagens: modularização, delegação e reaproveitamento
-  • Dados de entrada e saída
-    - Funções podem receber dados de entrada (parâmetros ou argumentos)
-    - Funções podem ou não retornar uma saída
-  • Em orientação a objetos, funções em classes recebem o nome de
-    "métodos"
-    
-  -----------------------------------------------------------------------------------------------------------------------------       
-   
-   Classe:
-   
-        É um tipo estruturado que pode conter (membros):
-                   • Atributos (dados / campos)
-                   • Métodos (funções / operações)
-
-        A classe também pode prover muitos outros recursos, tais como:
-                   • Construtores
-                   • Sobrecarga
-                   • Encapsulamento
-                   • Herança
-                   • Polimorfismo
-       Exemplos:
-                   • Entidades: Produto, Cliente, Triangulo
-                   • Serviços: ProdutoService, ClienteService, EmailService, StorageService
-                   • Controladores: ProdutoController, ClienteController
-                   • Utilitários: Calculadora, Compactador
-                   • Outros (views, repositórios, gerenciadores, etc.) 
+	 * Restrições para nomes de variáveis:
+	 * 
+	 * • Não pode começar com dígito: use uma letra ou _ • Não usar acentos ou til •
+	 * Não pode ter espaço em branco • Sugestão: use nomes que tenham um significado
+	 * 
+	 * Convenções: • Camel Case: lastName pacotes atributos métodos variáveis e
+	 * parâmetros • Pascal Case: ProductService classes
+	 * 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------
+	 * 
+	 * Operadores bitwise
+	 * 
+	 * Operador Significado & Operação "E" bit a bit | Operação "OU" bit a bit ^
+	 * Operação "OU-exclusivo" bit a bit
+	 * 
+	 * 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------
+	 * 
+	 * Funções interessantes para String
+	 * 
+	 * • Formatar: toLowerCase(), toUpperCase(), trim() • Recortar:
+	 * substring(inicio), substring(inicio, fim) • Substituir: Replace(char, char),
+	 * Replace(string, string) • Buscar: IndexOf, LastIndexOf • str.Split(" ")
+	 * 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------
+	 * 
+	 * Funções (sintaxe):
+	 * 
+	 * • Representam um processamento que possui um significado - Math.sqrt(double)
+	 * - System.out.println(string) • Principais vantagens: modularização, delegação
+	 * e reaproveitamento • Dados de entrada e saída - Funções podem receber dados
+	 * de entrada (parâmetros ou argumentos) - Funções podem ou não retornar uma
+	 * saída • Em orientação a objetos, funções em classes recebem o nome de
+	 * "métodos"
+	 * 
+	 * -----------------------------------------------------------------------------
+	 * ------------------------------------------------
+	 * 
+	 * Classe:
+	 * 
+	 * É um tipo estruturado que pode conter (membros): • Atributos (dados / campos)
+	 * • Métodos (funções / operações)
+	 * 
+	 * A classe também pode prover muitos outros recursos, tais como: • Construtores
+	 * • Sobrecarga • Encapsulamento • Herança • Polimorfismo Exemplos: • Entidades:
+	 * Produto, Cliente, Triangulo • Serviços: ProdutoService, ClienteService,
+	 * EmailService, StorageService • Controladores: ProdutoController,
+	 * ClienteController • Utilitários: Calculadora, Compactador • Outros (views,
+	 * repositórios, gerenciadores, etc.)
 	 */
-	
 
 	/*
 	 * Ex25: Fazer um programa para ler as medidas dos lados de dois triângulos X e
@@ -1310,4 +1267,64 @@ public class Main {
 		sc.close();
 	}
 
+	/*
+	 * Construtores: • É uma operação especial da classe, que executa no momento da
+	 * instanciação do objeto
+	 * 
+	 * • Usos comuns: 
+	 * • Iniciar valores dos atributos
+
+	 * • Permitir ou obrigar que o objeto receba dados / dependências no momento de sua instanciação (injeção de
+	 * dependência) 
+	 * 
+	 * • Se um construtor customizado não for especificado, a classe
+	 * disponibiliza o construtor padrão: Product p = new Product(); 
+	 * 
+	 * • É possível especificar mais de um construtor na mesma classe (sobrecarga)
+	 * 
+	 * this: referencia pro propio objeto (é uma forma de diferenciar o parametro do  metodo do atributo do objeto)
+	 * 
+	 * podemos criar variaveis temporarias onde vão se almacenar os dados.
+	 * 
+	 * A palavra THIS é uma referência para o próprio objeto
+	 * 
+	 * é utilizado : para Diferenciar atributos de variáveis locais
+     * Passar o próprio objeto como argumento na chamada de um método o construtor
+	 */
+
+	
+	public static void EX31() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		String name = sc.nextLine();
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+		System.out.print("Quantity in stock: ");
+		int quantity = sc.nextInt();
+		ProductConstructor productConstructor = new ProductConstructor(name, price, quantity);
+		
+		System.out.println();
+		System.out.println("Product data: " + productConstructor);
+
+		System.out.println();
+		System.out.println("Enter the number of products to be added in stock: ");
+		quantity = sc.nextInt();
+		productConstructor.addProducts(quantity);
+
+		System.out.println();
+		System.out.println("Updated data: " + productConstructor);
+
+		System.out.println();
+		System.out.println("Enter the number of products to be removed from stock:  ");
+		quantity = sc.nextInt();
+		productConstructor.removeProducts(quantity);
+
+		System.out.println();
+		System.out.println("Updated data: " + productConstructor);
+
+		sc.close();
+	}
 }
