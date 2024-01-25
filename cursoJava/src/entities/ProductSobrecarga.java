@@ -1,14 +1,22 @@
 package entities;
 
-public class ProductConstructor {
+public class ProductSobrecarga {
 	public String name;
 	public double price;
 	public int quantity;//parametro
 	
-	public ProductConstructor(String name, double price, int quantity) {
+	public ProductSobrecarga() {  // construtor padrão
+	}
+	
+	public ProductSobrecarga(String name, double price, int quantity) {
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity; //atributo
+	}
+	
+	public ProductSobrecarga(String name, double price) {
+		this.name = name;
+		this.price = price;
 	}
 	
 	public double totalValueInStock() {
@@ -33,4 +41,6 @@ public class ProductConstructor {
 			+ String.format("%.2f", totalValueInStock());
 	}
 
+	
+	//Por convensão os get e set são colocados depois dos constructores.
 }

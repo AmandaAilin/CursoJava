@@ -4,6 +4,7 @@ import java.util.Scanner;
 import entities.Employee;
 import entities.Product;
 import entities.ProductConstructor;
+import entities.ProductSobrecarga;
 import entities.Rectangle;
 import entities.Student;
 import entities.Triangle;
@@ -51,8 +52,9 @@ public class Main {
 		// EX28();
 		// EX29();
 		// Calculator();
-		//EX30();
-		EX31();
+		// EX30();
+		//EX31();
+		ProductSobrecarga();
 
 	}
 
@@ -1271,28 +1273,27 @@ public class Main {
 	 * Construtores: • É uma operação especial da classe, que executa no momento da
 	 * instanciação do objeto
 	 * 
-	 * • Usos comuns: 
-	 * • Iniciar valores dos atributos
-
-	 * • Permitir ou obrigar que o objeto receba dados / dependências no momento de sua instanciação (injeção de
-	 * dependência) 
+	 * • Usos comuns: • Iniciar valores dos atributos
 	 * 
-	 * • Se um construtor customizado não for especificado, a classe
-	 * disponibiliza o construtor padrão: Product p = new Product(); 
+	 * • Permitir ou obrigar que o objeto receba dados / dependências no momento de
+	 * sua instanciação (injeção de dependência)
+	 * 
+	 * • Se um construtor customizado não for especificado, a classe disponibiliza o
+	 * construtor padrão: Product p = new Product();
 	 * 
 	 * • É possível especificar mais de um construtor na mesma classe (sobrecarga)
 	 * 
-	 * this: referencia pro propio objeto (é uma forma de diferenciar o parametro do  metodo do atributo do objeto)
+	 * this: referencia pro propio objeto (é uma forma de diferenciar o parametro do
+	 * metodo do atributo do objeto)
 	 * 
 	 * podemos criar variaveis temporarias onde vão se almacenar os dados.
 	 * 
 	 * A palavra THIS é uma referência para o próprio objeto
 	 * 
-	 * é utilizado : para Diferenciar atributos de variáveis locais
-     * Passar o próprio objeto como argumento na chamada de um método o construtor
+	 * é utilizado : para Diferenciar atributos de variáveis locais Passar o próprio
+	 * objeto como argumento na chamada de um método o construtor
 	 */
 
-	
 	public static void EX31() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
@@ -1305,7 +1306,7 @@ public class Main {
 		System.out.print("Quantity in stock: ");
 		int quantity = sc.nextInt();
 		ProductConstructor productConstructor = new ProductConstructor(name, price, quantity);
-		
+
 		System.out.println();
 		System.out.println("Product data: " + productConstructor);
 
@@ -1324,6 +1325,50 @@ public class Main {
 
 		System.out.println();
 		System.out.println("Updated data: " + productConstructor);
+
+		sc.close();
+	}
+
+	/*
+	 * Sobrecarga: É um recurso que uma classe possui de oferecer mais de uma
+	 * operação com o mesmo nome, porém com diferentes listas de parâmetros.
+	 * 
+	 * EX: Vamos criar um construtor opcional, o qual recebe apenas nome e preço do
+	 * produto. A quantidade em estoque deste novo produto, por padrão, deverá então
+	 * ser iniciada com o valor zero.
+	 * 
+	 * Nota: é possível também incluir um construtor padrão
+	 */
+
+	public static void ProductSobrecarga() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		String name = sc.nextLine();
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+		ProductSobrecarga productSobrecarga = new ProductSobrecarga(name, price);
+
+		System.out.println();
+		System.out.println("Product data: " + productSobrecarga);
+
+		System.out.println();
+		System.out.println("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		productSobrecarga.addProducts(quantity);
+
+		System.out.println();
+		System.out.println("Updated data: " + productSobrecarga);
+
+		System.out.println();
+		System.out.println("Enter the number of products to be removed from stock:  ");
+		quantity = sc.nextInt();
+		productSobrecarga.removeProducts(quantity);
+
+		System.out.println();
+		System.out.println("Updated data: " + productSobrecarga);
 
 		sc.close();
 	}
