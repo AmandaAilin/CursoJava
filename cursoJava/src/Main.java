@@ -4,6 +4,7 @@ import java.util.Scanner;
 import entities.Employee;
 import entities.Product;
 import entities.ProductConstructor;
+import entities.ProductEncapsulamento;
 import entities.ProductSobrecarga;
 import entities.Rectangle;
 import entities.Student;
@@ -53,8 +54,9 @@ public class Main {
 		// EX29();
 		// Calculator();
 		// EX30();
-		//EX31();
-		ProductSobrecarga();
+		// EX31();
+		//ProductSobrecarga();
+		ProductEncapsulamento();
 
 	}
 
@@ -1372,4 +1374,57 @@ public class Main {
 
 		sc.close();
 	}
+
+	/*
+	 * Encapsulamento: É um princípio que consiste em esconder detalhes de
+	 * implementação de uma classe, expondo apenas operações seguras e que mantenham
+	 * os objetos em um estado consistente.
+	 * 
+	 * Regra de ouro: o objeto deve sempre estar em um estado consistente, e a
+	 * própria classe deve garantir isso
+	 * 
+	 * Regra geral básica: Um objeto NÃO deve expor nenhum atributo (modificador de
+	 * acesso private)
+	 * 
+	 * Os atributos devem ser acessados por meio de métodos get e set
+	 */
+	
+	public static void ProductEncapsulamento() {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		String name = sc.nextLine();
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+		ProductEncapsulamento productEncapsulamento = new ProductEncapsulamento(name, price);
+
+		productEncapsulamento.setName("Computer");
+		System.out.println("Updated name: " + productEncapsulamento.getName());
+		productEncapsulamento.setPrice(1200.00);
+		System.out.println("Updated price: " + productEncapsulamento.getPrice());
+		
+		System.out.println();
+		System.out.println("Product data: " + productEncapsulamento);
+
+		System.out.println();
+		System.out.println("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		productEncapsulamento.addProducts(quantity);
+
+		System.out.println();
+		System.out.println("Updated data: " + productEncapsulamento);
+
+		System.out.println();
+		System.out.println("Enter the number of products to be removed from stock:  ");
+		quantity = sc.nextInt();
+		productEncapsulamento.removeProducts(quantity);
+
+		System.out.println();
+		System.out.println("Updated data: " + productEncapsulamento);
+
+		sc.close();
+	}
+
 }
