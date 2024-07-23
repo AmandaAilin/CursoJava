@@ -20,7 +20,8 @@ Deslocação por escopo:(ver pdf)
 	 
 	 * Variaveis locais são desalocadas imediatamente assim que seu escopo local sai da execução
 </p>
-<p>Vetores: <br>
+<h3>Vetores:</h3> <br>
+<p>
 Em programação Vetor é o nome dado a arranjos unidimencionais (arranjo = array) é uma estrutura de dados. <br>
 Esta é: <br>
 
